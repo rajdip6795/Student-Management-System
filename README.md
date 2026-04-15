@@ -7,7 +7,7 @@ This is a simple Java console-based application to manage student records.
 - View students
 - Delete student
 - Update student
-- Search student1
+- Search student
 
 ## Technologies Used
 - Java
