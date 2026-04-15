@@ -22,7 +22,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         while(true){
-            System.out.println("\n1.Add 2.View 3.Delete 4.Exit");
+            System.out.println("\n1.Add 2.View 3.Delete 4.Update 5.Search 6.Exit");
             int choice = sc.nextInt();
 
             switch (choice) {
@@ -51,7 +51,34 @@ public class Main {
                     break;
 
                 case 4:
-                    System.exit(0);
+                    System.out.println("Enter ID to update: ");
+                    int updateId = sc.nextInt();
+                    sc.nextLine();
+
+                    for(Student s : students){
+                        if(s.id == updateId){
+                            System.out.print("Enter new name: ");
+                            s.name = sc.nextLine();
+                            System.out.print("Enter new age: ");
+                            s.age = sc.nextInt();
+                        }
+                    }
+                    break;
+
+                case 5:
+                    System.out.println("Enter ID to search: ");
+                    int searchId = sc.nextInt();
+
+                    for(Student s : students){
+                        if(s.id == searchId){
+                            System.out.println(s);
+                        }
+                    }
+                    break;
+
+                case 6:
+                    sc.close();
+                    return;
             }
         }
     }
